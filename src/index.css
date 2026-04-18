@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Golden/Black Luxury Palette */
+  --color-accent: #FFB800; /* Warm golden */
+  --color-accent-hover: #E6A600;
+  --color-bg: #0A0A0A;
+  --color-card: #141414;
+  --color-border: rgba(255, 255, 255, 0.05);
+
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-bg text-white selection:bg-accent selection:text-black font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif font-bold tracking-tight;
+  }
+}
+
+.golden-glow {
+  @apply shadow-[0_0_30px_rgba(255,184,0,0.1)];
+}
+
+.card-luxury {
+  @apply bg-card border border-border rounded-xl p-8 hover:border-accent/20 transition-all duration-300;
+}
+
+.btn-golden {
+  @apply bg-accent text-black font-bold px-6 py-3 rounded-full hover:bg-accent-hover transition-all flex items-center gap-2;
+}
+
+.text-gradient-golden {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-white via-accent to-accent/80;
+}
+
+
+
+.markdown-body p {
+  @apply leading-relaxed;
+}
+
+.markdown-body ul {
+  @apply list-disc list-inside space-y-1;
+}
+
+.markdown-body strong {
+  @apply font-bold text-accent;
+}
+
+
